@@ -1,0 +1,23 @@
+[PROJECT]
+Target=son_proje.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.007
+Compiler=PCM
+CCSVersion=5.007
+[Target Data]
+FileList=son_proje.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\User\Desktop\CCS C COMPLÝER\
+[C:\Users\User\Desktop\CCS C COMPLÝER\son_proje]
+Type=4
+[mru-list]
+1=son_proje.c
+[Opened Files]
+1=son_proje.c
+2=
+3=
+[son_proje.c]
+Type=4
+[Units]
+Count=1
+1=son_proje (main)

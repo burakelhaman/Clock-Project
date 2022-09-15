@@ -1,0 +1,62 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01F.6   C1OUT
+01F.7   C2OUT
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     i
+029     ext_kesmesi.@SCRATCH1
+02A     @delay_ms1.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09B-09C @READ_PROGRAM_MEMORY8.P1
+
+ROM Allocation:
+00002F  @delay_ms1
+000044  ext_kesmesi
+00006E  MAIN
+00006E  @cinit1
+000070  @cinit2
+
+Project Directory:
+    C:\Users\User\Desktop\CCS C COMPLÝER\
+
+Project Files:
+    kesme.c                                                 [30-Tem-18 23:29  CRC=C963A366]
+    kesme.h                                                 [30-Tem-18 23:16  CRC=D872A938]
+    ..\..\..\..\Program Files (x86)\PICC\Devices\16F628A.h  [21-Haz-13 16:04  CRC=FEBF88CA]
+
+Source signature=9F555E32
+
+Units:
+    kesme (main)
+
+Compiler Settings:
+    Processor:      PIC16F628A
+    Pointer Size:   16
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   kesme.xsym
+    Errors:      kesme.err
+    Ext Symbols: kesme.esym
+    INHX8:       kesme.hex
+    Symbols:     kesme.sym
+    List:        kesme.lst
+    Debug/COFF:  kesme.cof
+    Project:     kesme.ccspjt
+    Call Tree:   kesme.tre
+    Statistics:  kesme.STA

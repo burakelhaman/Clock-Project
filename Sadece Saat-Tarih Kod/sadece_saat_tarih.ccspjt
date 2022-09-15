@@ -1,0 +1,24 @@
+[PROJECT]
+Target=sadece_saat_tarih.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.007
+Compiler=PCM
+CCSVersion=5.007
+[Target Data]
+FileList=sadece_saat_tarih.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\User\Desktop\CCS C COMPLÝER\
+[C:\Users\User\Desktop\CCS C COMPLÝER\sadece_saat_tarih]
+Type=4
+[mru-list]
+1=sadece_saat_tarih.c
+[Opened Files]
+1=sadece_saat_tarih.c
+2=
+3=sadece_sicaklik.c
+4=
+[sadece_saat_tarih.c]
+Type=4
+[Units]
+Count=1
+1=sadece_saat_tarih (main)

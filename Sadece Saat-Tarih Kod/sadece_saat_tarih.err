@@ -1,0 +1,7 @@
+>>> Warning 203 "sadece_saat_tarih.c" Line 64(1,1): Condition always TRUE
+>>> Warning 202 "sadece_saat_tarih.c" Line 20(14,19): Variable never used:   bilgi
+>>> Warning 202 "sadece_saat_tarih.c" Line 21(5,11): Variable never used:   birler
+>>> Warning 202 "sadece_saat_tarih.c" Line 21(12,17): Variable never used:   onlar
+      Memory usage:   ROM=11%      RAM=8% - 14%
+      0 Errors,  4 Warnings.
+Build Successful.

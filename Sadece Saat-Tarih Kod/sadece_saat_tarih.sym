@@ -1,0 +1,135 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @TRIS_C
+021-022 i
+023     bilgi
+024     birler
+025     onlar
+026     saniye
+027     dakika
+028     saat
+029     gun
+02A     ay
+02B     yil
+02C     haftanin_gunu
+02D     saniyeon
+02E     dakikaon
+02F     saaton
+030     gunon
+031     ayon
+032     yilon
+033     saniyebir
+034     dakikabir
+035     saatbir
+036     gunbir
+037     aybir
+038     yilbir
+039     rtc_init.x
+039-03C atan2.y
+039     rtc_set_datetime.day
+039     rtc_get_date.@SCRATCH1
+039     rtc_get_time.@SCRATCH1
+039     gecis_animasyon.@SCRATCH1
+039     MAIN.@SCRATCH1
+03A     @delay_ms1.P1
+03A     rtc_set_datetime.mth
+03A     rtc_init.@SCRATCH1
+03B     rtc_set_datetime.year
+03C     rtc_set_datetime.dow
+03D-040 atan2.x
+03D     read_ds1302.cmd
+03D     rtc_set_datetime.hr
+03E     read_ds1302.i
+03E     rm_bcd.data
+03E     rtc_set_datetime.min
+03F     rm_bcd.i
+03F     get_bcd.data
+03F     read_ds1302.data
+03F     rtc_set_datetime.@SCRATCH1
+040     write_ds1302.cmd
+040     get_bcd.nibh
+040     rm_bcd.@SCRATCH1
+041     get_bcd.nibl
+041-044 atan2.z
+041     write_ds1302.data
+041     rm_bcd.@SCRATCH2
+042     @MUL88.P1
+042     write_ds1302_byte.cmd
+042     @DIV88.P1
+042     get_bcd.@SCRATCH1
+043     write_ds1302_byte.i
+043     @MUL88.P1
+043     @DIV88.P2
+044     @DIV88.@SCRATCH1
+045.0   atan2.sign
+046     atan2.quad
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  digit.call
+000008  digit.data
+000014  write_ds1302_byte
+000034  write_ds1302
+000047  read_ds1302
+00007F  rtc_init
+0000A5  @delay_ms1
+0000BA  @DIV88
+0000CF  @MUL88
+0000F4  get_bcd
+00010B  rtc_set_datetime
+000153  rm_bcd
+00016E  gecis_animasyon
+0001D5  @cinit1
+0001D5  MAIN
+0001DE  @cinit2
+000205  rtc_get_time
+000220  rtc_get_date
+
+Project Directory:
+    C:\Users\User\Desktop\CCS C COMPLÝER\
+
+Project Files:
+    sadece_saat_tarih.c                                     [25-Tem-19 23:22  CRC=DBC84ED7]
+    ..\..\..\..\Program Files (x86)\PICC\Devices\16f877A.h  [21-Haz-13 16:04  CRC=4E65664C]
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\math.h     [28-Eyl-12 11:35  CRC=546412C9]
+    ds1302.c                                                [25-Tem-19 14:26  CRC=0232BC24]
+
+Source signature=82F74034
+
+Units:
+    sadece_saat_tarih (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   sadece_saat_tarih.xsym
+    Errors:      sadece_saat_tarih.err
+    Ext Symbols: sadece_saat_tarih.esym
+    INHX8:       sadece_saat_tarih.hex
+    Symbols:     sadece_saat_tarih.sym
+    List:        sadece_saat_tarih.lst
+    Debug/COFF:  sadece_saat_tarih.cof
+    Project:     sadece_saat_tarih.ccspjt
+    Call Tree:   sadece_saat_tarih.tre
+    Statistics:  sadece_saat_tarih.STA

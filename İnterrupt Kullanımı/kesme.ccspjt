@@ -1,0 +1,22 @@
+[PROJECT]
+Target=kesme.hex
+Processor_Text=PIC16F628A
+CCSVerions=5.007
+Compiler=PCM
+CCSVersion=5.007
+[Target Data]
+FileList=kesme.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\User\Desktop\CCS C COMPLÝER\
+[C:\Users\User\Desktop\CCS C COMPLÝER\kesme]
+Type=4
+[mru-list]
+1=kesme.c
+[Opened Files]
+1=kesme.c
+2=
+[kesme.c]
+Type=4
+[Units]
+Count=1
+1=kesme (main)

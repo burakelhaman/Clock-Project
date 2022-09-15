@@ -1,0 +1,200 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @TRIS_C
+021     saniye
+022     dakika
+023     saat
+024     gun
+025     ay
+026     yil
+027     haftanin_gunu
+028     display1_onlar
+029     display1_birler
+02A     display2_onlar
+02B     display2_birler
+02C     display3_onlar
+02D     display3_birler
+02E     i
+02F     set_degeri
+030     mod_degeri
+031-032 sicaklik_bilgisi
+033-036 sicaklik_degeri
+037-03A sicaklik_voltaj
+03B     sicaklik_ekrani
+03C-03F @DIVFF.P1
+03C     get_bcd.data
+03C-03F atan2.y
+03C     rtc_init.x
+03C     rtc_get_date.@SCRATCH1
+03C     rtc_get_time.@SCRATCH1
+03C     display_tara.@SCRATCH1
+03C     sicaklik_tara.@SCRATCH1
+03C     gecis_animasyon.@SCRATCH1
+03C     display1_tara.@SCRATCH1
+03C     display2_tara.@SCRATCH1
+03C     display3_tara.@SCRATCH1
+03C     set_konumunda_display_tara.@SCRATCH1
+03C     ayarlar.@SCRATCH1
+03C     saat_basi_alarm.@SCRATCH1
+03C     MAIN.@SCRATCH1
+03D     @delay_ms1.P1
+03D     write_ds1302.cmd
+03D     get_bcd.nibh
+03D     rtc_init.@SCRATCH1
+03D     MAIN.@SCRATCH2
+03E     write_ds1302.data
+03E     get_bcd.nibl
+03E     MAIN.@SCRATCH3
+03F     @DIV88.P1
+03F     get_bcd.@SCRATCH1
+03F     MAIN.@SCRATCH4
+040-043 atan2.x
+040     read_ds1302.cmd
+040-043 @DIVFF.P1
+040-043 floor.x
+040     @DIV88.P1
+041     read_ds1302.i
+041     rm_bcd.data
+041     @DIV88.@SCRATCH1
+042     rm_bcd.i
+042     read_ds1302.data
+043     write_ds1302_byte.cmd
+043     rm_bcd.@SCRATCH1
+044-047 atan2.z
+044     write_ds1302_byte.i
+044-047 CEIL_FLOOR.x
+044     rm_bcd.@SCRATCH2
+044     @DIVFF.@SCRATCH1
+045     @MUL88.P1
+045     @DIVFF.@SCRATCH2
+046     @MUL88.P1
+046     @DIVFF.@SCRATCH3
+047     @DIVFF.@SCRATCH4
+048.0   atan2.sign
+048     CEIL_FLOOR.n
+048     @DIVFF.@SCRATCH5
+049-04C CEIL_FLOOR.y
+049     atan2.quad
+049     @DIVFF.@SCRATCH6
+04D-050 CEIL_FLOOR.res
+051-052 CEIL_FLOOR.l
+053.0   CEIL_FLOOR.s
+054-057 @FLT.P1
+054-057 @SFTOI.P2
+054-057 @MULFF.P3
+054     CEIL_FLOOR.@SCRATCH1
+055     CEIL_FLOOR.@SCRATCH2
+056     CEIL_FLOOR.@SCRATCH3
+057     CEIL_FLOOR.@SCRATCH4
+058-05B @MULFF.P1
+058-05B @ADDFF.P2
+058-059 @ITOF.P3
+058-05B @FLT.P4
+05C-05F @ADDFF.P1
+05C     @FLT.@SCRATCH1
+05C     @MULFF.@SCRATCH1
+05D     @FLT.@SCRATCH2
+05D     @MULFF.@SCRATCH2
+05E     @MULFF.@SCRATCH3
+05F     @MULFF.@SCRATCH4
+060     @MULFF.@SCRATCH5
+060     @ADDFF.@SCRATCH1
+061     @ADDFF.@SCRATCH2
+062     @ADDFF.@SCRATCH3
+063     @ADDFF.@SCRATCH4
+064     @ADDFF.@SCRATCH5
+065     @ADDFF.@SCRATCH6
+066     @ADDFF.@SCRATCH7
+067     @ADDFF.@SCRATCH8
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  display_digit.call
+000008  display_digit.data
+000012  @delay_ms1
+000026  write_ds1302_byte
+000046  write_ds1302
+000059  read_ds1302
+00009D  rtc_init
+0000C8  gecis_animasyon
+00012D  sicaklik_tara
+00016C  display_tara
+0001CD  @MUL88
+0001F2  rm_bcd
+00020D  @DIV88
+000222  set_konumunda_display_tara
+000233  display1_tara
+000254  get_bcd
+00026B  display2_tara
+00028C  display3_tara
+0002AD  ayarlar
+000610  saat_basi_alarm
+000644  @ITOF
+000661  @MULFF
+0006D6  @DIVFF
+0007A0  @FLT
+0007DF  @SFTOI
+000800  @ADDFF
+000941  floor
+00094A  CEIL_FLOOR
+000B01  @cinit1
+000B01  MAIN
+000B0B  @cinit2
+000B60  rtc_get_time
+000BF4  rtc_get_date
+0609  ayardan_cik
+0465  set1_den_cik
+03A0  mod1s_cik
+0401  mod2s_cik
+0461  mod3s_cik
+0609  set2_den_cik
+0543  mod1t_cik
+05A5  mod2t_cik
+0605  mod3t_cik
+
+Project Directory:
+    C:\Users\User\Desktop\11032\
+
+Project Files:
+    saat_tarih_derece_7sdisplay.c                           [13-Aðu-10 18:08  CRC=8090179D]
+    ..\..\..\..\Program Files (x86)\PICC\Devices\16f877.h   [21-Haz-13 16:04  CRC=A355A189]
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\DS1302.c   [03-Þub-09 09:25  CRC=2438A8CE]
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\math.h     [28-Eyl-12 11:35  CRC=546412C9]
+
+Source signature=F0E68786
+
+Units:
+    saat_tarih_derece_7sdisplay (main)
+
+Compiler Settings:
+    Processor:      PIC16F877
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   saat_tarih_derece_7sdisplay.xsym
+    Errors:      saat_tarih_derece_7sdisplay.err
+    Ext Symbols: saat_tarih_derece_7sdisplay.esym
+    INHX8:       saat_tarih_derece_7sdisplay.hex
+    Symbols:     saat_tarih_derece_7sdisplay.sym
+    List:        saat_tarih_derece_7sdisplay.lst
+    Debug/COFF:  saat_tarih_derece_7sdisplay.cof
+    Project:     saat_tarih_derece_7sdisplay.ccspjt
+    Call Tree:   saat_tarih_derece_7sdisplay.tre
+    Statistics:  saat_tarih_derece_7sdisplay.STA

@@ -1,0 +1,84 @@
+
+ROM used:   4231/8192 (52%)
+            4921/8192 (60%) including unused fragments
+
+            1.1 Average locations per line
+            3.8 Average locations per statement
+
+RAM used:   35/368 (10%) at main() level
+            56/368 (15%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  599   760  69  son_proje.c
+  661     0   0  ..\..\..\..\Program Files (x86)\PICC\Devices\16f877A.h
+ 2229   257  23  ..\..\..\..\Program Files (x86)\PICC\Drivers\math.h
+   61    36   3  ds18b20.c
+  143    53   5  ..\..\..\..\Program Files (x86)\PICC\Drivers\DS1302.c
+----- -----
+ 3693  1106 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   0    1             @delay_ms1
+0     33   1    4             @SFTOI
+1    323   8   16             @ADDFF
+ Inline        14             @DIVFF
+ Inline         2             @SITOF
+0     19   0    0    86  1.3  onewire_reset
+0     30   1    2   272  4.3  onewire_write
+0     35   1    2   284  4.6  onewire_read
+1    336   8   13   476  4.2  ds1820_read
+0     32   1    2   199  4.3  write_ds1302_byte
+0     19   0    2    94  1.8  write_ds1302
+0     56   1    3   401  4.9  read_ds1302
+0     38   1    2   247  3.7  rtc_init
+0     23   1    4   160  5.0  get_bcd
+0     21   0    3             @DIV88
+0     37   1    2             @MUL88
+0     27   1    4   160  4.2  rm_bcd
+ Inline         5   238  3.1  rtc_get_date
+ Inline         4   170  3.0  rtc_get_time
+0     14   0    0             @const834
+0     14   0    0             @const837
+0     37   1    1   296  5.1  display_goster
+0     47   1    1   270  1.9  ekran
+0     31   1    0   195  1.4  gecis_animasyon
+0     31   1    1   130  2.6  saat_basi
+0     63   1    1   480  1.9  display1_goster
+0     63   1    1   480  1.9  display2_goster
+0     63   1    1   480  1.9  display3_goster
+0    103   2    1   829  3.4  set_konumunda_display_goster
+0    138   3    1   843  6.3  alarm_kontrol
+0     12   0    0    57  1.5  buton
+ Inline         0   928  7.2  alarm_secim
+1    875  21    1  4716  8.9  alarm_set
+0    861  20    1  8818  8.5  ayarlar
+2    825  19    6  4275  8.5  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               26
+    Statements              1106
+    Comments                492
+    Volume (V)              38586
+    Difficulty (D)          106.5
+    Effort to implement (E) 4108576
+    Time to implement (T)   63 hours, 24 minutes
+    Est Delivered Bugs (B)  9
+    Cyclomatic Complexity   90
+    Maintainability (MI)    93
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF  1868  176  
+00800-00FFF  1534  514  
+01000-017FF   825  1223  
+01800-01FFF     0  2048  
+
+
+

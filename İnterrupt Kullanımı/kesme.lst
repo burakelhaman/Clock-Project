@@ -1,0 +1,189 @@
+CCS PCM C Compiler, Version 5.007, 61971               30-Tem-18 23:29
+
+               Filename:   C:\Users\User\Desktop\CCS C COMPLÝER\kesme.lst
+
+               ROM used:   128 words (6%)
+                           Largest free fragment is 1920
+               RAM used:   14 (6%) at main() level
+                           16 (7%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   06E
+0003:  NOP
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  21
+0008:  MOVF   7F,W
+0009:  MOVWF  20
+000A:  MOVF   0A,W
+000B:  MOVWF  27
+000C:  CLRF   0A
+000D:  SWAPF  20,F
+000E:  MOVF   04,W
+000F:  MOVWF  22
+0010:  MOVF   77,W
+0011:  MOVWF  23
+0012:  MOVF   78,W
+0013:  MOVWF  24
+0014:  MOVF   79,W
+0015:  MOVWF  25
+0016:  MOVF   7A,W
+0017:  MOVWF  26
+0018:  BCF    03.7
+0019:  BCF    03.5
+001A:  BTFSS  0B.4
+001B:  GOTO   01E
+001C:  BTFSC  0B.1
+001D:  GOTO   044
+001E:  MOVF   22,W
+001F:  MOVWF  04
+0020:  MOVF   23,W
+0021:  MOVWF  77
+0022:  MOVF   24,W
+0023:  MOVWF  78
+0024:  MOVF   25,W
+0025:  MOVWF  79
+0026:  MOVF   26,W
+0027:  MOVWF  7A
+0028:  MOVF   27,W
+0029:  MOVWF  0A
+002A:  SWAPF  21,W
+002B:  MOVWF  03
+002C:  SWAPF  7F,F
+002D:  SWAPF  7F,W
+002E:  RETFIE
+.................... #include <kesme.h> 
+.................... #include <16F628A.h> 
+.................... //////// Standard Header file for the PIC16F628A device //////////////// 
+.................... #device PIC16F628A 
+....................  
+.................... #list 
+....................  
+....................  
+.................... #FUSES NOWDT                 	//No Watch Dog Timer 
+.................... #FUSES NOBROWNOUT            	//No brownout reset 
+.................... #FUSES NOLVP                 	//No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+....................  
+.................... #use delay(crystal=4000000) 
+002F:  MOVLW  2A
+0030:  MOVWF  04
+0031:  BCF    03.7
+0032:  MOVF   00,W
+0033:  BTFSC  03.2
+0034:  GOTO   043
+0035:  MOVLW  01
+0036:  MOVWF  78
+0037:  CLRF   77
+0038:  DECFSZ 77,F
+0039:  GOTO   038
+003A:  DECFSZ 78,F
+003B:  GOTO   037
+003C:  MOVLW  4A
+003D:  MOVWF  77
+003E:  DECFSZ 77,F
+003F:  GOTO   03E
+0040:  GOTO   041
+0041:  DECFSZ 00,F
+0042:  GOTO   035
+0043:  RETURN
+....................  
+....................  
+.................... #use fast_io(b) //Port yönlendirme komutlarý B portu için geçerli 
+.................... int i; 
+.................... #int_ext // Dýþ (External) RB0/INT kesmesi 
+.................... void ext_kesmesi(){ 
+.................... output_high(pin_b1); 
+0044:  BSF    06.1
+....................  delay_ms(1000); 
+0045:  MOVLW  04
+0046:  MOVWF  29
+0047:  MOVLW  FA
+0048:  MOVWF  2A
+0049:  CALL   02F
+004A:  DECFSZ 29,F
+004B:  GOTO   047
+....................  output_low(pin_b1); 
+004C:  BCF    06.1
+....................  delay_ms(3000); 
+004D:  MOVLW  0C
+004E:  MOVWF  29
+004F:  MOVLW  FA
+0050:  MOVWF  2A
+0051:  CALL   02F
+0052:  DECFSZ 29,F
+0053:  GOTO   04F
+....................   
+....................  for (i=0;i<10;i++) 
+0054:  CLRF   28
+0055:  MOVF   28,W
+0056:  SUBLW  09
+0057:  BTFSS  03.0
+0058:  GOTO   06B
+....................  { 
+....................  output_high(pin_b1); 
+0059:  BSF    06.1
+....................  delay_ms(500); 
+005A:  MOVLW  02
+005B:  MOVWF  29
+005C:  MOVLW  FA
+005D:  MOVWF  2A
+005E:  CALL   02F
+005F:  DECFSZ 29,F
+0060:  GOTO   05C
+....................  output_low(pin_b1); 
+0061:  BCF    06.1
+....................  delay_ms(500); 
+0062:  MOVLW  02
+0063:  MOVWF  29
+0064:  MOVLW  FA
+0065:  MOVWF  2A
+0066:  CALL   02F
+0067:  DECFSZ 29,F
+0068:  GOTO   064
+0069:  INCF   28,F
+006A:  GOTO   055
+....................  } 
+006B:  BCF    0B.1
+006C:  BCF    0A.3
+006D:  GOTO   01E
+.................... } 
+....................  
+.................... void main() 
+006E:  MOVLW  07
+006F:  MOVWF  1F
+0070:  BCF    03.7
+0071:  MOVLW  1F
+0072:  ANDWF  03,F
+.................... { 
+....................  
+....................  set_tris_b(0x01); // RB0 pini giriþ,diðer uçlar çýkýþ olarak yönlendiriliyor 
+0073:  MOVLW  01
+0074:  BSF    03.5
+0075:  MOVWF  06
+....................  output_b(0x00); // B portu çýkýþý ilk anda sýfýrlanýyor 
+0076:  BCF    03.5
+0077:  CLRF   06
+....................   
+....................  ext_int_edge(H_TO_L); // INT_EXT kesmesinin düþen kenarda aktif olacaðýný belirtir 
+0078:  BSF    03.5
+0079:  BCF    01.6
+....................   
+....................  enable_interrupts(INT_EXT); // INT_EXT kesmesini aktif yapar 
+007A:  BCF    03.5
+007B:  BSF    0B.4
+....................  enable_interrupts(GLOBAL); // Aktif edilen kesmelere izin ver 
+007C:  MOVLW  C0
+007D:  IORWF  0B,F
+....................   
+....................  while(1); // Sonsuz döngü 
+007E:  GOTO   07E
+....................  } 
+007F:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F21   NOWDT PUT XT MCLR NOBROWNOUT NOLVP NOCPD NOPROTECT

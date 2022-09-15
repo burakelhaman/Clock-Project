@@ -1,0 +1,108 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @TRIS_C
+021-022 i
+023-024 bilgi
+025     birler
+026     onlar
+027-02A atan2.y
+027-02A @SFTOI.P1
+027     ds1820_read.busy
+027-028 @DIV1616.P1
+027     MAIN.@SCRATCH1
+028     ds1820_read.temp1
+029     ds1820_read.temp2
+029-02A @DIV1616.P1
+02A-02B ds1820_read.temp3
+02B-02E atan2.x
+02B     @DIV1616.@SCRATCH1
+02C-02F ds1820_read.result
+02F-032 atan2.z
+030     onewire_read.count
+030     onewire_write.data
+030     @delay_ms1.P1
+030-031 @SITOF.P2
+030     ds1820_read.@SCRATCH1
+031     onewire_write.count
+031     onewire_read.data
+031     ds1820_read.@SCRATCH2
+032     ds1820_read.@SCRATCH3
+033.0   atan2.sign
+033     ds1820_read.@SCRATCH4
+034     atan2.quad
+034-037 @DIVFF.P1
+038-03B @DIVFF.P1
+03C     @DIVFF.@SCRATCH1
+03D     @DIVFF.@SCRATCH2
+03E     @DIVFF.@SCRATCH3
+03F     @DIVFF.@SCRATCH4
+040     @DIVFF.@SCRATCH5
+041     @DIVFF.@SCRATCH6
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  digit.call
+000008  digit.data
+000014  onewire_reset
+00002F  onewire_write
+000055  onewire_read
+000080  @delay_ms1
+000095  ds1820_read
+0000B9  @SITOF
+0000F2  @DIVFF
+0001D1  @SFTOI
+0001F2  @DIV1616
+000217  basamak_hesapla
+00022E  gecis_animasyon
+00028D  MAIN
+00028D  @cinit1
+000296  @cinit2
+
+Project Directory:
+    C:\Users\User\Desktop\CCS C COMPLÝER\
+
+Project Files:
+    sadece_sicaklik.c                                       [25-Tem-19 23:18  CRC=9939EBCF]
+    ..\..\..\..\Program Files (x86)\PICC\Devices\16f877A.h  [21-Haz-13 16:04  CRC=4E65664C]
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\math.h     [28-Eyl-12 11:35  CRC=546412C9]
+    ds18b20.c                                               [24-Tem-19 23:08  CRC=34AEC89C]
+
+Source signature=A560F61C
+
+Units:
+    sadece_sicaklik (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   sadece_sicaklik.xsym
+    Errors:      sadece_sicaklik.err
+    Ext Symbols: sadece_sicaklik.esym
+    INHX8:       sadece_sicaklik.hex
+    Symbols:     sadece_sicaklik.sym
+    List:        sadece_sicaklik.lst
+    Debug/COFF:  sadece_sicaklik.cof
+    Project:     sadece_sicaklik.ccspjt
+    Call Tree:   sadece_sicaklik.tre
+    Statistics:  sadece_sicaklik.STA

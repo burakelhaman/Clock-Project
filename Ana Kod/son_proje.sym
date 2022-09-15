@@ -1,0 +1,210 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     @TRIS_C
+021     saniye
+022     dakika
+023     saat
+024     gun
+025     ay
+026     yil
+027     haftanin_gunu
+028     display1_onlar
+029     display1_birler
+02A     display2_onlar
+02B     display2_birler
+02C     display3_onlar
+02D     display3_birler
+02E     i
+02F     j
+030     k
+031     maske
+032     alarm_sira
+033     set_degeri
+034     mod_degeri
+035-036 bilgi
+037     sicaklik_ekrani
+038     rtc_init.x
+038     ds1820_read.busy
+038-03B atan2.y
+038     get_bcd.data
+038     rtc_get_date.@SCRATCH1
+038     rtc_get_time.@SCRATCH1
+038     ekran.@SCRATCH1
+038     saat_basi.@SCRATCH1
+038     display1_goster.@SCRATCH1
+038     display2_goster.@SCRATCH1
+038     display3_goster.@SCRATCH1
+038     set_konumunda_display_goster.@SCRATCH1
+038     alarm_kontrol.@SCRATCH1
+038     alarm_set.@SCRATCH1
+038     ayarlar.@SCRATCH1
+038     MAIN.@SCRATCH1
+039     get_bcd.nibh
+039     write_ds1302.cmd
+039     display_goster.bilgi
+039     ds1820_read.temp1
+039     rtc_init.@SCRATCH1
+039     MAIN.@SCRATCH2
+03A     get_bcd.nibl
+03A     write_ds1302.data
+03A     ds1820_read.temp2
+03A     MAIN.@SCRATCH3
+03B-03C ds1820_read.temp3
+03B     @DIV88.P1
+03B     get_bcd.@SCRATCH1
+03B     MAIN.@SCRATCH4
+03C     @DIV88.P1
+03C-03F atan2.x
+03C     read_ds1302.cmd
+03C     MAIN.@SCRATCH5
+03D-040 ds1820_read.result
+03D     read_ds1302.i
+03D     rm_bcd.data
+03D     @DIV88.@SCRATCH1
+03D     MAIN.@SCRATCH6
+03E     read_ds1302.data
+03E-041 @SFTOI.P1
+03E-041 @ADDFF.P2
+03E     rm_bcd.i
+03F     write_ds1302_byte.cmd
+03F     rm_bcd.@SCRATCH1
+040     write_ds1302_byte.i
+040-043 atan2.z
+040     rm_bcd.@SCRATCH2
+041-042 @SITOF.P1
+041     @MUL88.P2
+041     onewire_write.data
+041     onewire_read.count
+041     @delay_ms1.P1
+041     ds1820_read.@SCRATCH1
+042     @MUL88.P1
+042     onewire_write.count
+042-045 @ADDFF.P1
+042     onewire_read.data
+042     ds1820_read.@SCRATCH2
+043     ds1820_read.@SCRATCH3
+044.0   atan2.sign
+044     ds1820_read.@SCRATCH4
+045     atan2.quad
+045-048 @DIVFF.P1
+046     @ADDFF.@SCRATCH1
+047     @ADDFF.@SCRATCH2
+048     @ADDFF.@SCRATCH3
+049-04C @DIVFF.P1
+049     @ADDFF.@SCRATCH4
+04A     @ADDFF.@SCRATCH5
+04B     @ADDFF.@SCRATCH6
+04C     @ADDFF.@SCRATCH7
+04D     @ADDFF.@SCRATCH8
+04D     @DIVFF.@SCRATCH1
+04E     @DIVFF.@SCRATCH2
+04F     @DIVFF.@SCRATCH3
+050     @DIVFF.@SCRATCH4
+051     @DIVFF.@SCRATCH5
+052     @DIVFF.@SCRATCH6
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  digit.call
+000008  digit.data
+000012  digit1.call
+000016  digit1.data
+000020  write_ds1302_byte
+000040  write_ds1302
+000053  read_ds1302
+00008B  rtc_init
+0000B1  @delay_ms1
+0000C6  buton
+0000D2  display_goster
+0000F7  ekran
+000126  @MUL88
+00014B  rm_bcd
+000166  @DIV88
+00017B  set_konumunda_display_goster
+0001E2  display1_goster
+000221  get_bcd
+000238  display2_goster
+000277  display3_goster
+0002B6  gecis_animasyon
+0002D5  ayarlar
+000632  saat_basi
+000651  alarm_kontrol
+0006DB  onewire_reset
+0006EE  onewire_write
+00070C  onewire_read
+00072F  @SFTOI
+000800  alarm_set
+000802  alarm_secim
+000B6B  ds1820_read
+000BA1  @SITOF
+000BDA  @DIVFF
+000CBB  @ADDFF
+001000  MAIN
+001000  @cinit1
+00100E  @cinit2
+001199  rtc_get_date
+0012B4  rtc_get_time
+0136  alarmsecim_cik
+0800  basla
+0B67  alarmdan_cik
+0A45  mod1_cik
+0AD6  mod2_cik
+062B  ayardan_cik
+0483  set1_den_cik
+03BA  mod1s_cik
+041E  mod2s_cik
+0481  mod3s_cik
+062A  set2_den_cik
+0560  mod1t_cik
+05C5  mod2t_cik
+0628  mod3t_cik
+
+Project Directory:
+    C:\Users\User\Desktop\CCS C COMPLÝER\
+
+Project Files:
+    son_proje.c                                             [07-Aðu-19 14:57  CRC=AE6A42E8]
+    ..\..\..\..\Program Files (x86)\PICC\Devices\16f877A.h  [21-Haz-13 16:04  CRC=4E65664C]
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\math.h     [28-Eyl-12 11:35  CRC=546412C9]
+    ds18b20.c                                               [29-Tem-19 10:50  CRC=34AEC89C]
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\DS1302.c   [03-Þub-09 09:25  CRC=2438A8CE]
+
+Source signature=CE53D635
+
+Units:
+    son_proje (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   son_proje.xsym
+    Errors:      son_proje.err
+    Ext Symbols: son_proje.esym
+    INHX8:       son_proje.hex
+    Symbols:     son_proje.sym
+    List:        son_proje.lst
+    Debug/COFF:  son_proje.cof
+    Project:     son_proje.ccspjt
+    Call Tree:   son_proje.tre
+    Statistics:  son_proje.STA

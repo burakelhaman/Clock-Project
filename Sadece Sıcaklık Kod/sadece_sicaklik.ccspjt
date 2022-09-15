@@ -1,0 +1,23 @@
+[PROJECT]
+Target=sadece_sicaklik.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.007
+Compiler=PCM
+CCSVersion=5.007
+[Target Data]
+FileList=sadece_sicaklik.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\User\Desktop\CCS C COMPLÝER\
+[C:\Users\User\Desktop\CCS C COMPLÝER\sadece_sicaklik]
+Type=4
+[mru-list]
+1=sadece_sicaklik.c
+[Opened Files]
+1=..\11032\saat_tarih_derece_7sdisplay.c
+2=
+3=
+[sadece_sicaklik.c]
+Type=4
+[Units]
+Count=1
+1=sadece_sicaklik (main)
